@@ -1,0 +1,42 @@
+li {
+    list-style-type: square;
+  }
+  
+#cena {
+   color: red;
+   font-weight: bold;
+   }
+
+   p.wstęp {
+    font-style: italic;
+  }
+
+  /* Obramowanie zdjęcia okładki */
+td img {
+    border: 1px solid blue;
+  }
+  
+  /* Zmiana koloru obramowania po najechaniu myszką */
+  td:hover img {
+    border-color: red;
+  }
+
+  h1 + h2 {
+    letter-spacing: 5px;
+  }
+  td[colspan="2"] > p {
+    font-size: small;
+  }
+  p + p {
+    color: grey;
+  }
+  body {
+    background-image: url(book.png);
+    background-repeat: repeat-y;
+    background-position: left top;
+  }
+        
+  /*gdy usuwamy !important z reguły zewnętrznej, to reguła ta ma niższy priorytet niż reguła z atrybutu style, więc zostanie ona nadpisana i kolorowanie tytułu książki pozostanie czerwone.*/
+  h1 {
+    color: yellow;
+  }
