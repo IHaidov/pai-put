@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Generacja macierzy danego rzędu</title>
+<style>
+table {border-collapse: collapse;}
+table, th, td {padding: 5px;border: 1px solid black;}
+th { background-color: #f5f5a5;}
+</style>
+<script type="text/javascript">
+function run(rozmiar) {
+    
+  var tab = document.getElementById("zest");
+  var colSums = new Array(rozmiar).fill(0);
+  for (var i=0;i<rozmiar;i++) {
+    var row = tab.insertRow(-1);
+    var rowSum = 0;
+    for (var j=0;j<rozmiar;j++) {
+        var randomNumber = Math.floor(Math.random() * 11) + 20;
+      var cell = row.insertCell(j);
+      cell.innerHTML = j;
+      rowSum += j;
+      colSums[j] += j;
+    }
+    var sumCell = row.insertCell(rozmiar);
+    sumCell.innerHTML = rowSum;
+  }
+  var sumRow = tab.insertRow(-1);
+  for (var j=0;j<rozmiar;j++) {
+    var cell = sumRow.insertCell(j);
+    cell.innerHTML = colSums[j];
+  }
+  var totalSum = colSums.reduce((a, b) => a + b, 0);
+  var sumCell = sumRow.insertCell(rozmiar);
+  sumCell.innerHTML = totalSum;
+}
+</script>
+</head>
+<body onload="run(4)">
+  <table id="zest">
+    <tr><th>A</th><th>B</th><th>C</th><th>D</th></tr>      
+  </table>  
+</body>
+</html> 
